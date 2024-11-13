@@ -10,11 +10,19 @@ public class CalculadoraService {
     
     public double division(int divisor,int dividendo){
         logger.info("Division: valores recibidos -> divisor: " + divisor +", dividendo: " + dividendo );
+        if (divisor==0) {
+            logger.error("Division: =>Valores recibidos => "+"Divisor: " +divisor +" Dividendo: "+ dividendo +
+            " \n No se puede dividir por 0");
+        }
         return dividendo/divisor;
     }
 
     public double raizCuadrada(int number){
         logger.info("Raiz cuadrada: Valor recibido -> "+number);
+        if (number<0) {
+            logger.error("Raiz Cuadrada: => Valor recibido "+ number +
+             " \n Las raices cuadradas de un numero negativo no se encuentra definidas en los numeros reales");
+        }
         return Math.sqrt(number);
     }
 
